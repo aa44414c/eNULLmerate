@@ -11,10 +11,10 @@ To install this on your machine, navigate to `/opt/` and then run:
 After that you will want to run:
 `sudo pip3 install -r requirements.txt`
 
-This will install everything you need for use and you will have the `/opt/eNULLmerate/` directory created in your system to begin using the script.
+This will install everything you need for use and you will have the `/opt/eNULLmerate/` directory created in your system to begin using the script.  Navigate to `opt/eNULLmerate/` and run `sudo setup.sh`.  Once done, you may proceed with the script.
 
 # How To Use
-This section discusses how to use eNULLmerate effectively.
+Run the script by executing `/opt/eNULLmerate/main.py` and type 1 to enumerate a domain and 2 to enumerate an IP address, address range, or multiple addresses.
 
 # Syntax
 This section lists the syntax of eNULLmerate and the different flags.
