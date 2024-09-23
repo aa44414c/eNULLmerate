@@ -14,7 +14,9 @@ elif [ "$2" == "" ];then
 	echo "${RED}-${NC} Syntax:  /usr/share/scripts/amass_script.sh <domain> <output_path>"
 	echo "${RED}-${NC} Example: /usr/share/scripts/amass_script.sh google.com /usr/outputs/"
 else
-	echo -e "${ORANGE}-${NC} Executing ${WHITE}amass enum -d $1 >> $2amass_output.txt${NC}..."
-	amass enum -d $1 >> $2amass_output.txt
+	echo -e "${ORANGE}-${NC} Executing ${WHITE}/usr/bin/amass enum -d $1 >> $2amass_output.txt${NC}..."
+	/usr/bin/amass enum -d $1 >> $2amass_output.txt
+	echo -e "${ORANGE}-${NC} Executing ${WHITE}grep -oE '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' $2amass_output.txt >> $2amass_ipaddr_list.txt${NC}..."
+	grep -oE "[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}" $2amass_output.txt >> $2amass_ipaddr_list.txt
 	echo -e "${GREEN}+${NC} Done..."
 fi
