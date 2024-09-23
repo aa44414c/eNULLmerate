@@ -11,10 +11,10 @@ def domain_enumeration(domain, path):
 	# Execute commands to collect information and begin our discovery and
 	# enumeration.
 	print(f'> Beginning discovery and enumeration of {domain}...')
-	# print('> Starting ' + '\x1b[0;33m' + 'Amass' + '\x1b[0m' + '...')
-	# os.system(f'/usr/share/scripts/amass_script.sh {domain} {path}')
-	# print('> ' + '\x1b[0;33m' + 'Amass' + '\x1b[0m' + 'finished...')
-	# print(f'> Storing output at {path}amass.txt...')
+	print('> Starting ' + '\x1b[0;33m' + 'Amass' + '\x1b[0m' + '...')
+	os.system(f'/usr/share/scripts/amass_script.sh {domain} {path}')
+	print('> ' + '\x1b[0;33m' + 'Amass' + '\x1b[0m' + 'finished...')
+	print(f'> Storing output at {path}amass.txt...')
 	print('> Starting ' + '\x1b[0;33m' + 'Assetfinder' + '\x1b[0m' + '...')
 	os.system(f'/usr/share/scripts/assetfinder_script.sh {domain} {path}')
 	print('> ' + '\x1b[0;33m' + 'Assetfinder' + '\x1b[0m' + ' finished...')
@@ -33,6 +33,7 @@ def domain_enumeration(domain, path):
 	os.system(f'/usr/share/scripts/nikto_script.sh {path} {path}')
 	print('> ' + '\x1b[0;33m' + 'Nikto' + '\x1b[0m' + ' finished...')
 	print(f'> Storing output at {path}nikto_output.txt...')
+	print(f'> Storing output at {path}nikto_ipaddr_list.txt...')
 	print('> Running ' + '\x1b[0;33m' + 'Nmap' + '\x1b[0m' + ' to gather information on the found sites...')
 	os.system(f'/usr/share/scripts/nmap_script.sh {path} {path}')
 	print('> ' + '\x1b[0;33m' + 'Nmap' + '\x1b[0m' + ' finished...')
@@ -40,13 +41,16 @@ def domain_enumeration(domain, path):
 	print(f'> Script has finished...')
 
 def ipaddr_enumeration(ipaddr, path):
-	# Passing for now.  This will be added in the future.
+	# Passing for now.
 	pass
+
 print('''
 Are you enumerating a domain or IP address range?
 
 1:  domain
 2:  ipaddr
+
+Enter 1 or 2...
 ''')
 choice = input('\x1b[0;33m' + '- ' + '\x1b[0m')
 if choice == '1':
