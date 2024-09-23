@@ -1,3 +1,5 @@
+**This is a work in progress and not ready for production use.  Use at your own risk.**
+
 # eNULLmerate
 A project used to do initial enumeration of a system for ethical penetration testing.  This is designed to work with Kali Linux as the primary operating system.
 
