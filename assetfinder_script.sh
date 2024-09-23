@@ -15,6 +15,8 @@ elif [ "$2" == "" ];then
 	echo "${RED}-${NC} Example: /usr/share/scripts/assetfinder_script.sh google.com /usr/outputs/"
 else
 	echo -e "${ORANGE}-${NC} Executing ${WHITE}assetfinder $1 >> $2assetfinder_output.txt${NC}..."
-	assetfinder $1 >> $2assetfinder_output.txt
+	/usr/bin/assetfinder $1 >> $2assetfinder_output.txt
+	echo -e "${ORANGE}-${NC} Executing ${WHITE}grep -oE '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' $2assetfinder_output.txt >> $2assetfinder_ipaddr_list.txt${NC}..."
+	grep -oE "[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}" $2assetfinder_output.txt >> $2assetfinder_ipaddr_list.txt
 	echo -e "${GREEN}+${NC} Done..."
 fi
