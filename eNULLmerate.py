@@ -41,7 +41,7 @@ def domain_enumeration(domain, path):
 	print(f'> Script has finished...')
 
 def ipaddr_enumeration(ipaddr, path):
-	# Passing for now.
+	# Will be implemented in a future release.
 	pass
 
 print('''
